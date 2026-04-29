@@ -1,11 +1,11 @@
 {
   "name": "claude-obsidian-marketplace",
   "owner": {
-    "name": "AgriciDaniel",
-    "url": "https://github.com/AgriciDaniel"
+    "name": "melodywen",
+    "url": "https://github.com/melodywen"
   },
   "metadata": {
-    "description": "claude-obsidian: CodeBuddy + Obsidian knowledge companion by AgriciDaniel",
+    "description": "claude-obsidian: CodeBuddy + Obsidian knowledge companion by melodywen",
     "version": "1.6.0"
   },
   "plugins": [
@@ -13,17 +13,17 @@
       "name": "claude-obsidian",
       "source": {
         "source": "github",
-        "repo": "AgriciDaniel/claude-obsidian",
+        "repo": "melodywen/claude-obsidian",
         "ref": "main"
       },
       "description": "CodeBuddy + Obsidian knowledge companion. Sets up a persistent, compounding wiki vault. Covers memory management, session notetaking, knowledge organization, and agent context across projects. Optional DragonScale Memory extension adds hierarchical log folds, deterministic page addresses, embedding-based semantic tiling lint, and boundary-first autoresearch topic selection.",
       "version": "1.6.0",
       "author": {
-        "name": "AgriciDaniel",
-        "url": "https://github.com/AgriciDaniel"
+        "name": "melodywen",
+        "url": "https://github.com/melodywen"
       },
-      "homepage": "https://github.com/AgriciDaniel/claude-obsidian",
-      "repository": "https://github.com/AgriciDaniel/claude-obsidian",
+      "homepage": "https://github.com/melodywen/claude-obsidian",
+      "repository": "https://github.com/melodywen/claude-obsidian",
       "license": "MIT"
     }
   ]
