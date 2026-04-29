@@ -5,6 +5,7 @@
 #
 # Supported agents:
 #   - Claude Code    : auto-discovered via .claude-plugin/ (no symlink needed)
+#   - CodeBuddy Code : symlink to ~/.codebuddy/skills/claude-obsidian
 #   - Codex CLI      : symlink to ~/.codex/skills/claude-obsidian
 #   - OpenCode       : symlink to ~/.opencode/skills/claude-obsidian
 #   - Gemini CLI     : symlink to ~/.gemini/skills/claude-obsidian
@@ -61,6 +62,9 @@ echo "claude-obsidian: multi-agent skill installer"
 echo "Repo: $REPO_ROOT"
 echo
 
+# CodeBuddy Code
+link_if_missing "$SKILLS_DIR" "$HOME/.codebuddy/skills/claude-obsidian" "CodeBuddy Code"
+
 # Codex CLI
 link_if_missing "$SKILLS_DIR" "$HOME/.codex/skills/claude-obsidian" "Codex CLI"
 
@@ -77,11 +81,12 @@ link_if_missing "$SKILLS_DIR" "$REPO_ROOT/.cursor/skills" "Cursor"
 link_if_missing "$SKILLS_DIR" "$REPO_ROOT/.windsurf/skills" "Windsurf"
 
 echo
-echo -e "${GREEN}Done.${NC} Bootstrap files (AGENTS.md, GEMINI.md, .cursor/rules/, .windsurf/rules/, .github/copilot-instructions.md) are already in this repo."
+echo -e "${GREEN}Done.${NC} Bootstrap files (AGENTS.md, CODEBUDDY.md, GEMINI.md, .cursor/rules/, .windsurf/rules/, .github/copilot-instructions.md) are already in this repo."
 echo
 echo "To verify each agent picks up the skills:"
-echo "  - Claude Code: open the project, type /wiki"
-echo "  - Codex CLI:   codex --list-skills | grep claude-obsidian"
-echo "  - Cursor:      open the project, ask 'what skills do you have?'"
-echo "  - Windsurf:    open in Cascade, ask the same"
-echo "  - Gemini CLI:  gemini --list-skills (if supported)"
+echo "  - Claude Code:    open the project, type /wiki"
+echo "  - CodeBuddy Code: open the project, type /wiki"
+echo "  - Codex CLI:      codex --list-skills | grep claude-obsidian"
+echo "  - Cursor:         open the project, ask 'what skills do you have?'"
+echo "  - Windsurf:       open in Cascade, ask the same"
+echo "  - Gemini CLI:     gemini --list-skills (if supported)"

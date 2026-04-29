@@ -17,7 +17,7 @@
 
 Claude + Obsidian knowledge companion and self-organizing AI second brain. A running AI notetaker that builds and maintains a persistent, compounding wiki vault. Every source you add gets integrated. Every question you ask pulls from everything that has been read. Knowledge compounds like interest.
 
-Open-source Obsidian AI plugin for AI note-taking, personal knowledge management (PKM), second-brain workflows, and a private Notion alternative. **15 Claude Code skills**, multi-agent support, multi-writer safe (v1.7+), first-class methodology modes (LYT / PARA / Zettelkasten / Generic via v1.8), and the 10-principle thinking framework (v1.9). Based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
+Open-source Obsidian AI plugin for AI note-taking, personal knowledge management (PKM), second-brain workflows, and a private Notion alternative. **15 Claude Code skills**, multi-agent support (Claude Code, CodeBuddy Code, Codex, Gemini, Cursor, Windsurf), multi-writer safe (v1.7+), first-class methodology modes (LYT / PARA / Zettelkasten / Generic via v1.8), and the 10-principle thinking framework (v1.9). Based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
 
 > **Two ways to get this skill.** Pick the one that fits how you work.
 >
@@ -97,7 +97,7 @@ Most Obsidian AI plugins are chat interfaces. They answer questions about your e
 | **Autonomous research** | ✅ 3-round web research with gap-filling | ❌ | ❌ |
 | **Methodology modes** | ✅ LYT / PARA / Zettelkasten / Generic (first-class) | ❌ | ❌ |
 | **Thinking framework** | ✅ 10-principle loop as invocable skill | ❌ | ❌ |
-| **Multi-model support** | ✅ Claude, Gemini, Codex, Cursor, Windsurf | ❌ Claude only | ✅ Multiple |
+| **Multi-model support** | ✅ Claude, CodeBuddy, Gemini, Codex, Cursor, Windsurf | ❌ Claude only | ✅ Multiple |
 | **Visual canvas** | ✅ Via [claude-canvas](https://github.com/AgriciDaniel/claude-canvas) | ❌ | ❌ |
 | **Multi-writer safe** | ✅ Per-file advisory locks (v1.7+) | ❌ | ❌ |
 | **Query with citations** | ✅ Cites specific wiki pages | ✅ Cites similar notes | ✅ Cites notes |
@@ -151,6 +151,25 @@ To check it worked:
 
 ```bash
 claude plugin list
+```
+
+---
+
+### Option 2b: Install as CodeBuddy Code plugin
+
+```bash
+# Step 1: add the marketplace
+codebuddy plugin marketplace add AgriciDaniel/claude-obsidian
+
+# Step 2: install the plugin
+codebuddy plugin install claude-obsidian@claude-obsidian-marketplace
+```
+
+In any CodeBuddy Code session: `/wiki`. CodeBuddy walks you through vault setup.
+
+To check it worked:
+```bash
+codebuddy plugin list
 ```
 
 ---
@@ -286,7 +305,7 @@ Use cases can be combined. A Business + Research vault organized in PARA is a va
 
 ## Cross-Project Knowledge Base
 
-Point any Claude Code project at this vault. Add to that project's `CLAUDE.md`:
+Point any Claude Code or CodeBuddy Code project at this vault. Add to that project's `CLAUDE.md` or `CODEBUDDY.md`:
 
 ```markdown
 ## Wiki Knowledge Base
@@ -457,8 +476,11 @@ The page renders a full-width header image in Obsidian. Works great for hub page
 ```
 claude-obsidian/
 ├── .claude-plugin/
-│   ├── plugin.json              # manifest
-│   └── marketplace.json         # distribution
+│   ├── plugin.json              # Claude Code manifest
+│   └── marketplace.json         # Claude Code distribution
+├── .codebuddy-plugin/
+│   ├── plugin.json              # CodeBuddy Code manifest
+│   └── marketplace.json         # CodeBuddy Code distribution
 ├── skills/                       # 15 Claude Code skills (v1.9.2)
 │   ├── wiki/                    # orchestrator + references
 │   ├── wiki-ingest/             # source ingestion
@@ -498,7 +520,8 @@ claude-obsidian/
 ├── .raw/                         # source documents (hidden in Obsidian)
 ├── .obsidian/snippets/           # vault-colors.css (3-color scheme)
 ├── WIKI.md                       # full schema reference
-├── CLAUDE.md                     # project instructions
+├── CLAUDE.md                     # Claude Code project instructions
+├── CODEBUDDY.md                  # CodeBuddy Code project instructions
 └── README.md                     # this file
 ```
 
