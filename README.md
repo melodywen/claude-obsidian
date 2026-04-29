@@ -12,7 +12,7 @@
 
 Claude + Obsidian knowledge companion. A running notetaker that builds and maintains a persistent, compounding wiki vault. Every source you add gets integrated. Every question you ask pulls from everything that has been read. Knowledge compounds like interest.
 
-Based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). **11 skills. Zero manual filing. Multi-agent support. Optional [DragonScale Memory](docs/dragonscale-guide.md) extension** (log folds, deterministic page addresses, semantic tiling lint, boundary-first autoresearch).
+Based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). **11 skills. Zero manual filing. Multi-agent support (Claude Code, CodeBuddy Code, Codex, Gemini, Cursor, Windsurf). Optional [DragonScale Memory](docs/dragonscale-guide.md) extension** (log folds, deterministic page addresses, semantic tiling lint, boundary-first autoresearch).
 
 ---
 
@@ -48,7 +48,7 @@ Most Obsidian AI plugins are chat interfaces - they answer questions about your 
 | **Session memory** | Hot cache persists between conversations | No | No |
 | **Vault maintenance** | 8-category lint (orphans, dead links, gaps) | No | No |
 | **Autonomous research** | 3-round web research with gap-filling | No | No |
-| **Multi-model support** | Claude, Gemini, Codex, Cursor, Windsurf | Claude only | Multiple |
+| **Multi-model support** | Claude, Gemini, Codex, CodeBuddy, Cursor, Windsurf | Claude only | Multiple |
 | **Visual canvas** | Via [claude-canvas](https://github.com/AgriciDaniel/claude-canvas) companion | No | No |
 | **Query with citations** | Cites specific wiki pages | Cites similar notes | Cites notes |
 | **Batch ingestion** | Parallel agents for multiple sources | No | No |
@@ -97,6 +97,25 @@ claude plugin list
 
 ---
 
+### Option 2b: Install as CodeBuddy Code plugin
+
+```bash
+# Step 1: add the marketplace
+codebuddy plugin marketplace add AgriciDaniel/claude-obsidian
+
+# Step 2: install the plugin
+codebuddy plugin install claude-obsidian@claude-obsidian-marketplace
+```
+
+In any CodeBuddy Code session: `/wiki`. CodeBuddy walks you through vault setup.
+
+To check it worked:
+```bash
+codebuddy plugin list
+```
+
+---
+
 ### Option 3: Add to an existing vault
 
 Copy `WIKI.md` into your vault root. Paste into Claude:
@@ -139,7 +158,7 @@ Then scaffold the full wiki structure.
 
 ## Cross-Project Power Move
 
-Point any Claude Code project at this vault. Add to that project's `CLAUDE.md`:
+Point any Claude Code or CodeBuddy Code project at this vault. Add to that project's `CLAUDE.md` or `CODEBUDDY.md`:
 
 ```markdown
 ## Wiki Knowledge Base
@@ -287,8 +306,11 @@ The page renders a full-width header image in Obsidian. Works great for hub page
 ```
 claude-obsidian/
 ├── .claude-plugin/
-│   ├── plugin.json              # manifest
-│   └── marketplace.json         # distribution
+│   ├── plugin.json              # Claude Code manifest
+│   └── marketplace.json         # Claude Code distribution
+├── .codebuddy-plugin/
+│   ├── plugin.json              # CodeBuddy Code manifest
+│   └── marketplace.json         # CodeBuddy Code distribution
 ├── skills/
 │   ├── wiki/                    # orchestrator + references (7 ref files)
 │   ├── wiki-ingest/             # INGEST operation
@@ -325,7 +347,8 @@ claude-obsidian/
 ├── .raw/                        # source documents (hidden in Obsidian)
 ├── .obsidian/snippets/          # vault-colors.css (3-color scheme)
 ├── WIKI.md                      # full schema reference
-├── CLAUDE.md                    # project instructions
+├── CLAUDE.md                    # Claude Code project instructions
+├── CODEBUDDY.md                 # CodeBuddy Code project instructions
 └── README.md                    # this file
 ```
 

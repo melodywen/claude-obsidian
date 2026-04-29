@@ -1,14 +1,17 @@
 # claude-obsidian: Agent Instructions
 
-This repo is a Claude Code plugin **and** an Obsidian vault that builds persistent, compounding knowledge bases using Andrej Karpathy's LLM Wiki pattern. It works with **any AI coding agent** that supports the Agent Skills standard, including Codex CLI, OpenCode, and similar.
+This repo is a Claude Code plugin **and** an Obsidian vault that builds persistent, compounding knowledge bases using Andrej Karpathy's LLM Wiki pattern. It works with **any AI coding agent** that supports the Agent Skills standard, including CodeBuddy Code, Codex CLI, OpenCode, and similar.
 
 Originally built for Claude Code, the skills follow the cross-platform Agent Skills spec. Newer skills (`wiki-fold`, `wiki-ingest`, `wiki-lint`) use only `name` and `description` frontmatter (kepano convention). Some older skills still carry an optional `allowed-tools` field for Claude Code compatibility; cross-platform agents that do not recognize it should ignore it.
 
 ## Skills Discovery
 
-All skills live in `skills/<name>/SKILL.md`. Codex / OpenCode / other Agent Skills compatible agents will auto-discover them when you symlink the directory:
+All skills live in `skills/<name>/SKILL.md`. CodeBuddy Code / Codex / OpenCode / other Agent Skills compatible agents will auto-discover them when you symlink the directory:
 
 ```bash
+# CodeBuddy Code
+ln -s "$(pwd)/skills" ~/.codebuddy/skills/claude-obsidian
+
 # Codex CLI
 ln -s "$(pwd)/skills" ~/.codex/skills/claude-obsidian
 
@@ -50,7 +53,7 @@ bash bin/setup-multi-agent.sh
 
 When the user opens this project for the first time:
 
-1. Read this file (`AGENTS.md`) and the project `CLAUDE.md` for full context
+1. Read this file (`AGENTS.md`) and the project `CLAUDE.md` / `CODEBUDDY.md` for full context
 2. Read `skills/wiki/SKILL.md` for the orchestration pattern
 3. If `wiki/hot.md` exists, read it silently to restore recent context
 4. If the user types `/wiki` (or "set up wiki"), follow the wiki skill's scaffold workflow
