@@ -6,7 +6,7 @@ This repo is a knowledge base companion that builds persistent, compounding Obsi
 
 ```bash
 # Step 1: add the marketplace
-codebuddy plugin marketplace add AgriciDaniel/claude-obsidian
+codebuddy plugin marketplace add melodywen/claude-obsidian
 
 # Step 2: install the plugin
 codebuddy plugin install claude-obsidian@claude-obsidian-marketplace
