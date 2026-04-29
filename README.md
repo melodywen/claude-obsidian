@@ -5,7 +5,7 @@
   <img src="wiki/meta/claude-obsidian-gif-cover-16x9.gif" alt="claude-obsidian" width="100%" />
 </p>
 
-[![GitHub stars](https://img.shields.io/github/stars/AgriciDaniel/claude-obsidian?style=flat&color=e8734a)](https://github.com/AgriciDaniel/claude-obsidian/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/melodywen/claude-obsidian?style=flat&color=e8734a)](https://github.com/melodywen/claude-obsidian/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-8B5CF6)](https://code.claude.com/docs/en/discover-plugins)
 [![Blog Post](https://img.shields.io/badge/Deep_Dive-Blog_Post-22c55e)](https://agricidaniel.com/blog/claude-obsidian-ai-second-brain)
@@ -49,7 +49,7 @@ Most Obsidian AI plugins are chat interfaces - they answer questions about your 
 | **Vault maintenance** | 8-category lint (orphans, dead links, gaps) | No | No |
 | **Autonomous research** | 3-round web research with gap-filling | No | No |
 | **Multi-model support** | Claude, Gemini, Codex, CodeBuddy, Cursor, Windsurf | Claude only | Multiple |
-| **Visual canvas** | Via [claude-canvas](https://github.com/AgriciDaniel/claude-canvas) companion | No | No |
+| **Visual canvas** | Via [claude-canvas](https://github.com/melodywen/claude-canvas) companion | No | No |
 | **Query with citations** | Cites specific wiki pages | Cites similar notes | Cites notes |
 | **Batch ingestion** | Parallel agents for multiple sources | No | No |
 | **Open source** | MIT | MIT | Freemium |
@@ -63,7 +63,7 @@ Most Obsidian AI plugins are chat interfaces - they answer questions about your 
 ### Option 1: Clone as vault (recommended: full setup in 2 minutes)
 
 ```bash
-git clone https://github.com/AgriciDaniel/claude-obsidian
+git clone https://github.com/melodywen/claude-obsidian
 cd claude-obsidian
 bash bin/setup-vault.sh
 ```
@@ -82,7 +82,7 @@ Plugin installation is a two-step process in Claude Code. First add the marketpl
 
 ```bash
 # Step 1: add the marketplace
-claude plugin marketplace add AgriciDaniel/claude-obsidian
+claude plugin marketplace add melodywen/claude-obsidian
 
 # Step 2: install the plugin
 claude plugin install claude-obsidian@claude-obsidian-marketplace
@@ -152,7 +152,7 @@ Then scaffold the full wiki structure.
 | `lint the wiki` | Health check: orphans, dead links, gaps, suggestions |
 | `update hot cache` | Refresh hot.md with latest context summary |
 
-> **Want more?** [claude-canvas](https://github.com/AgriciDaniel/claude-canvas) adds 12 templates, 6 layout algorithms, AI image generation, presentations, and full canvas orchestration. Install both — they complement each other.
+> **Want more?** [claude-canvas](https://github.com/melodywen/claude-canvas) adds 12 templates, 6 layout algorithms, AI image generation, presentations, and full canvas orchestration. Install both — they complement each other.
 
 ---
 
@@ -388,10 +388,10 @@ The graph view will show a connected cluster of 5 pages. This is what the wiki l
 
 ## Companion: claude-canvas
 
-For the visual layer, [claude-canvas](https://github.com/AgriciDaniel/claude-canvas) adds AI-orchestrated canvas creation - knowledge graphs, presentations, flowcharts, mood boards with 12 templates and 6 layout algorithms. Auto-detects claude-obsidian vaults.
+For the visual layer, [claude-canvas](https://github.com/melodywen/claude-canvas) adds AI-orchestrated canvas creation - knowledge graphs, presentations, flowcharts, mood boards with 12 templates and 6 layout algorithms. Auto-detects claude-obsidian vaults.
 
 ```bash
-claude plugin install AgriciDaniel/claude-canvas
+claude plugin install melodywen/claude-canvas
 ```
 
 ---
@@ -400,8 +400,8 @@ claude plugin install AgriciDaniel/claude-canvas
 
 - [Blog post](https://agricidaniel.com/blog/claude-obsidian-ai-second-brain) - deep dive with competitor analysis, data charts, and workflow demos
 - [AI Marketing Hub](https://www.skool.com/ai-marketing-hub) - 2,800+ members, free community
-- [YouTube](https://www.youtube.com/@AgriciDaniel) - tutorials and demos
-- [All open-source tools](https://github.com/AgriciDaniel) - claude-seo, claude-ads, claude-blog, and more
+- [YouTube](https://www.youtube.com/@melodywen) - tutorials and demos
+- [All open-source tools](https://github.com/melodywen) - claude-seo, claude-ads, claude-blog, and more
 
 ---
 
